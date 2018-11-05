@@ -50,7 +50,7 @@ public class PollDisplayPanel extends JPanel
   // Returns a string representation of this object
   public String toString()
   {
-    return "Tami: " + count1 + "  Brian: " + count2 + "  Liz: " + count3;
+    return name1 + ": " + count1 + " " + name2 + ": " + count2 + " "  +name3+ ": " + count3;
   }
 
   // Redefines JPanel's paintComponent to draw this pie chart
@@ -114,11 +114,11 @@ public class PollDisplayPanel extends JPanel
     y += (r + 20);
     g.setColor(Color.BLACK);
 
-    g.drawString(Integer.toString(count1), x - r, y);
+    g.drawString(name1 + ": " + count1, x - r, y);
 
-    g.drawString(Integer.toString(count2), x, y);
+    g.drawString(name2 + ": " + count2, x, y);
 
-    g.drawString(Integer.toString(count3), x + r, y);
+    g.drawString(name3 + ": " + count3, x + r, y);
 
 
     // Display the color squares:
@@ -136,7 +136,7 @@ public class PollDisplayPanel extends JPanel
   // corresponds to count / total, rounded to the nearest integer.
   private int countToDegrees(int count, int total)
   {
-    return (int)Math.round((double)count*360/total);
+    return (int)Math.round(count*360.0/total);
   }
 
   // Draws a sector, centered at x, y, of radius r,
@@ -147,5 +147,16 @@ public class PollDisplayPanel extends JPanel
       g.fillOval(x - r, y - r, 2 * r, 2 * r);
     else
       g.fillArc(x - r, y - r, 2 * r, 2 * r, fromDegree, degrees);
+  }
+  
+  //Get methods.
+  public String getName1() {
+      return name1;
+  }
+  public String getName2() {
+      return name2;
+  }
+  public String getName3() {
+      return name3;
   }
 }

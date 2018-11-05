@@ -20,19 +20,19 @@ public class PollControlPanel extends JPanel
   {
     chartPanel = chart;
 
-    button1 = new JButton("Tami");
+    button1 = new JButton(chartPanel.getName1());
     button1.setPreferredSize(new Dimension(80, 30));
-    button1.setToolTipText("Vote for Tami");
+    button1.setToolTipText("Vote for " + chartPanel.getName1());
     button1.addActionListener(this);
 
-    button2 = new JButton("Brian");
+    button2 = new JButton(chartPanel.getName2());
     button2.setPreferredSize(new Dimension(80, 30));
-    button2.setToolTipText("Vote for Brian");
+    button2.setToolTipText("Vote for " + chartPanel.getName2());
     button2.addActionListener(this);
 
-    button3 = new JButton("Liz");
+    button3 = new JButton(chartPanel.getName3());
     button3.setPreferredSize(new Dimension(80, 30));
-    button3.setToolTipText("Vote for Liz");
+    button3.setToolTipText("Vote for " + chartPanel.getName3());
     button3.addActionListener(this);
 
     add(button1);
