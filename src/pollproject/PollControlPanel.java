@@ -13,7 +13,7 @@ import javax.swing.JButton;
 public class PollControlPanel extends JPanel
                           implements ActionListener
 {
-  private JButton button1, button2, button3;
+  private JButton button1, button2, button3, button4;
   private PollDisplayPanel chartPanel;
 
   public PollControlPanel(PollDisplayPanel chart)
@@ -34,10 +34,16 @@ public class PollControlPanel extends JPanel
     button3.setPreferredSize(new Dimension(80, 30));
     button3.setToolTipText("Vote for " + chartPanel.getName3());
     button3.addActionListener(this);
+    
+    button4 = new JButton(chartPanel.getName4());
+    button4.setPreferredSize(new Dimension(80, 30));
+    button4.setToolTipText("Vote for " + chartPanel.getName4());
+    button4.addActionListener(this);
 
     add(button1);
     add(button2);
     add(button3);
+    add(button4);
   }
 
   /**
@@ -53,6 +59,8 @@ public class PollControlPanel extends JPanel
       chartPanel.vote2();
     else if (button == button3)
       chartPanel.vote3();
+    else if (button == button4)
+      chartPanel.vote4();
     chartPanel.repaint();
   }
 }

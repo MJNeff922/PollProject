@@ -13,13 +13,13 @@ import java.util.Scanner;
 
 public class Poll extends JFrame
 {
-  public Poll(String nm1, String nm2, String nm3)
+  public Poll(String nm1, String nm2, String nm3, String nm4)
   {
-    super("Vote for " + nm1 + ", " + nm2 + ", or " + nm3 + ".");
+    super("Vote for " + nm1 + ", " + nm2 + ", " + nm3 + ", or" + nm4 + ".");
 
     Container c = getContentPane();
     c.setBackground(Color.WHITE);
-    PollDisplayPanel chart = new PollDisplayPanel(nm1, nm2, nm3);
+    PollDisplayPanel chart = new PollDisplayPanel(nm1, nm2, nm3, nm4);
     PollControlPanel controls = new PollControlPanel(chart);
     c.add(chart, BorderLayout.CENTER);
     c.add(controls, BorderLayout.SOUTH);
@@ -28,13 +28,15 @@ public class Poll extends JFrame
   public static void main(String[] args)
   {
     Scanner sc = new Scanner(System.in);
-    System.out.println("Input three names: ");
+    System.out.println("Input four names: ");
     String nm1 = sc.nextLine();
     String nm2 = sc.nextLine();
     String nm3 = sc.nextLine();
-    Poll w = new Poll(nm1, nm2, nm3);
+    String nm4 = sc.nextLine();
+    Poll w = new Poll(nm1, nm2, nm3, nm4);
     w.setBounds(300, 300, 400, 400);
     w.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    w.setAlwaysOnTop(true);
     w.setVisible(true);
   }
 }

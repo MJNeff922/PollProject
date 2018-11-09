@@ -12,21 +12,23 @@ import javax.swing.JPanel;
 
 public class PollDisplayPanel extends JPanel
 {
-  private String name1, name2, name3;
+  private String name1, name2, name3, name4;
   // Declare the int fields count1, count2, count3:
 
-  private int count1, count2, count3;
+  private int count1, count2, count3, count4;
 
   // Constructor
-  public PollDisplayPanel(String nm1, String nm2, String nm3)
+  public PollDisplayPanel(String nm1, String nm2, String nm3, String nm4)
   {
     setBackground(Color.WHITE);
     name1 = nm1;
     name2 = nm2;
     name3 = nm3;
+    name4 = nm4;
     count1 = 0;   // optional
     count2 = 0;   // optional
     count3 = 0;   // optional
+    count4 = 0;
   }
 
   // Increments count1
@@ -46,11 +48,17 @@ public class PollDisplayPanel extends JPanel
   {
       count3++;
   }
+  
+  // Increments count3
+  public void vote4()
+  {
+      count4++;
+  }
 
   // Returns a string representation of this object
   public String toString()
   {
-    return name1 + ": " + count1 + " " + name2 + ": " + count2 + " "  +name3+ ": " + count3;
+    return name1 + ": " + count1 + " " + name2 + ": " + count2 + " "  +name3+ ": " + count3 + " "  +name4+ ": " + count4;
   }
 
   // Redefines JPanel's paintComponent to draw this pie chart
@@ -119,6 +127,8 @@ public class PollDisplayPanel extends JPanel
     g.drawString(name2 + ": " + count2, x, y);
 
     g.drawString(name3 + ": " + count3, x + r, y);
+    
+    g.drawString(name3 + ": " + count3, x + r, y);
 
 
     // Display the color squares:
@@ -158,5 +168,8 @@ public class PollDisplayPanel extends JPanel
   }
   public String getName3() {
       return name3;
+  }
+  public String getName4() {
+      return name4;
   }
 }
